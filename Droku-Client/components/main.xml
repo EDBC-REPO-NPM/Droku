@@ -1,0 +1,3 @@
+<component name="main" extends="Scene"> <children></children>
+    <script type="text/brightscript" uri="main.brs" />
+</component>

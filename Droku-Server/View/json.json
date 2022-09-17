@@ -1,0 +1,69 @@
+{ 
+    "scene":{
+        "backgroundURI": "https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg"
+    }, "children": [
+        {
+            "focus":true,
+            "type": "PosterGrid",
+            "fields":{
+                "control":"RUN", "visible": "true",
+                "basePosterSize":[240,240],
+                "translation":[160,92],
+                "itemSpacing":[32,32],
+                "caption1NumLines":1,
+                "caption2NumLines":1,
+                "numColumns":2,
+                "numRows":2
+            },
+            "children":[{
+                "type":"ContentNode",
+                "children":[
+                        {
+                            "type":"ContentNode",
+                            "fields":{ "id":"1", "title":"mierda",
+                                "hdposterurl":"https://assets.mubicdn.net/images/notebook/post_images/19893/images-w1400.jpg?1449196747",
+                                "hdgridposterurl":"https://assets.mubicdn.net/images/notebook/post_images/19893/images-w1400.jpg?1449196747"
+                            },  "events":{ "OK":{"focus":"over"} }
+                        },{
+                            "type":"ContentNode",
+                            "fields":{ "id":"2", "title":"mierda",
+                                "hdposterurl":"https://assets.mubicdn.net/images/notebook/post_images/19893/images-w1400.jpg?1449196747",
+                                "hdgridposterurl":"https://assets.mubicdn.net/images/notebook/post_images/19893/images-w1400.jpg?1449196747"
+                            }
+                        },{
+                            "type":"ContentNode",
+                            "fields":{ "id":"3", "title":"mierda",
+                                "hdposterurl":"https://assets.mubicdn.net/images/notebook/post_images/19893/images-w1400.jpg?1449196747",
+                                "hdgridposterurl":"https://assets.mubicdn.net/images/notebook/post_images/19893/images-w1400.jpg?1449196747"
+                            }
+                        },{
+                            "type":"ContentNode",
+                            "fields":{ "id":"4", "title":"mierda",
+                                "hdposterurl":"https://assets.mubicdn.net/images/notebook/post_images/19893/images-w1400.jpg?1449196747",
+                                "hdgridposterurl":"https://assets.mubicdn.net/images/notebook/post_images/19893/images-w1400.jpg?1449196747"
+                            }
+                        },{
+                            "type":"ContentNode",
+                            "fields":{ "id":"4", "title":"mierda",
+                                "hdposterurl":"https://assets.mubicdn.net/images/notebook/post_images/19893/images-w1400.jpg?1449196747",
+                                "hdgridposterurl":"https://assets.mubicdn.net/images/notebook/post_images/19893/images-w1400.jpg?1449196747"
+                            }
+                        },{
+                            "type":"ContentNode",
+                            "fields":{ "id":"5", "title":"mierda",
+                                "hdposterurl":"https://assets.mubicdn.net/images/notebook/post_images/19893/images-w1400.jpg?1449196747",
+                                "hdgridposterurl":"https://assets.mubicdn.net/images/notebook/post_images/19893/images-w1400.jpg?1449196747"
+                            }
+                        }
+                ]
+            }]
+        },{
+            "type": "OverHang",
+            "fields":{ "id":"over",
+                "title":"ArepaTV",
+                "color": "0x000000",
+                "visible":true
+            }
+        }
+    ]
+}

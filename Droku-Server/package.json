@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "axios": "^0.27.2",
+    "molly-fetch": "^1.0.8",
+    "molly-js": "^1.0.63"
+  }
+}
