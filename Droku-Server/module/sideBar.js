@@ -7,11 +7,10 @@ function buttons(){
         return {
             type:"ContentNode", fields:{
                 hdposterurl: iconFile.replace(/ICON/,z),
-                events: {
-                    left:[{
-                        set:{ id:"MoviePosterGrid", focus:true }
-                    }],
-                }
+            },  events: {
+                right:[
+                    { type: 'set', id:"MoviePosterGrid", focus:true }
+                ],
             }
         }
     });
@@ -19,16 +18,11 @@ function buttons(){
 
 module.exports = ()=>{
     const children = {
-        type:"PosterGrid", fields:{
-            basePosterSize:[60,60],
-            id:"MenuGrid",
-            translation:[
-                0.02 * size.w,
-                0.30 * size.h
-            ],itemSpacing:[
-                0.01 * size.w,
-                0.01 * size.h
-            ],numColumns:1,numRows: 6,
+        focus: true,
+        type:"PosterGrid", fields:{ id:"MenuGrid",
+            translation:[ 0.02 * size.w, 0.30 * size.h ],
+            itemSpacing:[ 0.01 * size.w, 0.01 * size.h ],
+            numColumns:1,numRows: 6, basePosterSize:[60,60],
         },  children: [{
             type: "ContentNode", children: buttons(),
         }]

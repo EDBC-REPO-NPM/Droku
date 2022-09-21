@@ -5,28 +5,25 @@ module.exports = ()=>{
 
     for( var i=10; i--; ){
         children.children.push({
-            type:"ContentNode", fields: { events:{
-                left: [{set:{ id:"MenuGrid", focus:true, fields:{}}}],
-                down: [{add:{ id:"MoviePosterGrid", url:"pageURL"}}],
-                OK: [{video:"videoURL"}],
-                }, hdposterurl: "https://www.cinemascomics.com/wp-content/uploads/2022/03/Billy-Butcher-THE-BOYS-3.jpg"
-            }
+            type:"ContentNode", fields: {  id:`${i}`,
+                hdposterurl: "https://www.cinemascomics.com/wp-content/uploads/2022/03/Billy-Butcher-THE-BOYS-3.jpg"
+            },events:{ 
+                left: [{ type:'set', id:"MenuGrid", focus:true }],
+                OK: [{ type:'set', id:"videoPlayer", focus:true, fields:{
+                    control:"play", visible: true
+                }}]
+            },
         })
     }
 
     return {
-        focus: true,
         type:"PosterGrid", fields:{
+            translation:[ 0.10 * size.w, 0.20 * size.h ],
+            itemSpacing:[ 0.01 * size.w, 0.01 * size.h ],
             vertFocusAnimationStyle: 'fixedFocus',
             basePosterSize:[170,230],
+            numColumns:6, numRows: 6,
             id:"MoviePosterGrid",
-            translation:[
-                0.10 * size.w,
-                0.20 * size.h
-            ],itemSpacing:[
-                0.01 * size.w,
-                0.01 * size.h
-            ],numColumns:6,numRows: 6,
         }, children: [children],
     }
 }

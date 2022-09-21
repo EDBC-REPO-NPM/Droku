@@ -13,13 +13,6 @@ sub mainScreen()
     screen = CreateObject("roSGScreen")
     screen.setMessagePort(m.port)
 
-    Run("pkg:/source/test.brs")
-
-    '' creating global Variables ''
-    m.global = screen.getGlobalNode() :  m.global.addFields({
-        width: 1280, height: 720
-    })
-
     '' creating scene ''
     m.scene = screen.CreateScene("main")
     screen.show() : m.scene.setFocus(true)
@@ -47,10 +40,10 @@ function placeNode( Parent as Object, Node as Object ) as Void
             element.setMessagePort(m.port)
         end if
 
-        if Node["observer"] <> invalid
-            for each item in Node["observer"]
-                m.scene.observeField(item, m.port)
-            end for 
+        if Node["events"] <> invalid
+            element.addFields({
+                events: Node["events"]
+            })
         end if
 
         if Node["children"] <> invalid
@@ -87,7 +80,7 @@ end function
 
 ''-------------------------------------------------------------------------------------------''
 
-Function fetch(params as Object) as Boolean
+Function fetch( params as Object ) as Boolean
 
     if params = invalid then return invalid
     request = CreateObject("roUrlTransfer")
@@ -123,16 +116,7 @@ End Function
 ''-------------------------------------------------------------------------------------------''
 
 function ElementEventHandler( Node as Object ) as Void
-    if Node.itemFocused <> invalid 
-        i = Node.itemFocused
-        if m.scene.element <> invalid
-            m.scene.element = Node.content.getChild(i)
-        else 
-            m.scene.addFields({
-                element: Node.content.getChild(i)
-            })
-        end if
-    end if
+    print "New Element focused"
 end function
 
 ''-------------------------------------------------------------------------------------------''
